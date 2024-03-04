@@ -1,0 +1,129 @@
+<FormikProvider value={formik}>
+<Form autoComplete="off" noValidate onSubmit={handleSubmit}>
+  <Stack spacing={{ xs: 2, sm: 3 }} sx={{ p: 3 }}>
+    <TextField
+      fullWidth
+      label="CustomerName"
+      {...getFieldProps("customerName")}
+      error={Boolean(touched.customerName && errors.customerName)}
+      helperText={touched.customerName && (errors.customerName as string)}
+    />
+    <TextField
+      fullWidth
+      label="BusinessName"
+      {...getFieldProps("businessName")}
+      error={Boolean(touched.businessName && errors.businessName)}
+      helperText={touched.businessName && (errors.businessName as string)}
+    />
+    <TextField
+      fullWidth
+      label="Address"
+      {...getFieldProps("address")}
+      error={Boolean(touched.address && errors.address)}
+      helperText={touched.address && (errors.address as string)}
+    />
+
+    <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+      {/* <PhoneAutocomplete
+        setFieldValue={setFieldValue}
+        phone={values.phone}
+        inputError={touched.phone && errors.phone}
+      /> */}
+      <TextField
+        fullWidth
+        label="P.IVA"
+        type="number"
+        {...getFieldProps("iva")}
+        // error={Boolean(touched.zip && errors.zip)}
+        // helperText={touched.zip && (errors.zip as string)}
+      />
+      <TextField
+        fullWidth
+        label="Phone"
+        type="number"
+        {...getFieldProps("phone")}
+        // error={Boolean(touched.zip && errors.zip)}
+        // helperText={touched.zip && (errors.zip as string)}
+      />
+      {/* <TextField
+        fullWidth
+        label="Alternative Phone"
+        {...getFieldProps("phone")}
+        type="number"
+        error={Boolean(touched.phone && errors.phone)}
+        helperText={touched.phone && (errors.phone as string)}
+      /> */}
+
+      {/* <TextField
+        fullWidth
+        label="Town / City"
+        {...getFieldProps("city")}
+        // error={Boolean(touched.city && errors.city)}
+        // helperText={touched.city && (errors.city as string)}
+      /> */}
+    </Stack>
+    <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+    <TextField
+      fullWidth
+      label="Email"
+      {...getFieldProps("email")}
+      error={Boolean(touched.email && errors.email)}
+      helperText={touched.email && (errors.email as string)}
+    />
+      {/* <TextField
+        fullWidth
+        label="State"
+        {...getFieldProps("state")}
+        // error={Boolean(touched.state && errors.state)}
+        // helperText={touched.state && (errors.state as string)}
+      /> */}
+      {/* <TextField
+        fullWidth
+        label="Zip / Postal Code"
+        type="number"
+        {...getFieldProps("zip")}
+        // error={Boolean(touched.zip && errors.zip)}
+        // helperText={touched.zip && (errors.zip as string)}
+      /> */}
+    </Stack>
+
+    {/* <TextField
+      select
+      fullWidth
+      label="Country"
+      placeholder="Country"
+      {...getFieldProps("country")}
+      SelectProps={{ native: true }}
+      // error={Boolean(touched.country && errors.country)}
+      // helperText={touched.country && (errors.country as string)}
+    >
+      {countries.map((option) => (
+        <option key={option.code} value={option.label}>
+          {option.label}
+        </option>
+      ))}
+    </TextField> */}
+    {/* <FormControlLabel
+      control={
+        <Checkbox checked={values.active} {...getFieldProps("active")} />
+      }
+      label="Use this address as default."
+      sx={{ mt: 3 }}
+    /> */}
+  </Stack>
+  <Divider />
+  <DialogActions>
+    <LoadingButton type="submit" variant="contained" loading={loading}>
+      Save Address
+    </LoadingButton>
+    <Button
+      type="button"
+      color="inherit"
+      variant="outlined"
+      onClick={()=> {console.log('clik')}}
+    >
+      Cancel
+    </Button>
+  </DialogActions>
+</Form>
+</FormikProvider>
